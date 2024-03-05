@@ -1,0 +1,23 @@
+<!-- Directives structurelles -->
+<!-- *ngFor permet de dupliquer un element html avec une boucle-->
+<!-- ngClass permet d'ajouter une classe de facon dynamique(directive structurelle)-->
+<!-- *ngIf permet de faire une condition(directive structurelle)-->
+<!-- ngStyle permet de changer le style d'un element html de facon dynamique(directive d'attribut)-->
+<!-- ngModel permet de recuperer une donnee et la mettre en valeur dans un champ de saisie d'un formulaire
+        [ngModel] recepteur de donnees
+        [(ngModel)] emetteur de donnees -->
+<!-- two way binding communication bi-directionnelle : importer le formsModule dans app.module.ts -->
+
+<h1 class="text-center text-muted">{{title}}</h1>  <!-- Interpolation avec doubles accolades pour recuperer variables de .ts-->
+
+<div class="mt-2 col-md-6 mx-auto">
+    <ul class="list-group">
+        <li (click)="changeStatus(task)" class="list-group-item d-flex justify-content-between" *ngFor="let task of tasks" [ngClass]="{encours:task.isDone == false,terminee: task.isDone== true}">
+            <b>{{task.title}}</b>
+        <div class="mt-2 d-flex">
+            <button class="btn btn-outline-dark-info m-2" (click)="visibility(task)">Modifier</button>
+            <input type="text" placeholder="Saisir une tache" class="form-control" [(ngModel)]="task.title" *ngIf="task.isVisible"> 
+        </div>
+        </li>
+    </ul>
+</div>
