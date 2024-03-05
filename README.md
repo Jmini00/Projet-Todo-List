@@ -1,3 +1,6 @@
+
+![Todo](https://github.com/Jmini00/Projet-Todo-List/assets/141427289/16259ab8-ef9b-4859-b764-cc6ea6c13f43)
+
 # Todo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
